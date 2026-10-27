@@ -7,3 +7,5 @@
 - Surprise: LP-DS's trust-region quantity is per-dimension-normalized in code, so its delta is not the paper's delta; deltas in the repo differ from the paper's table for Gym tasks (unconfirmed).
 - Process note: subagent reports are unverified until I check the cited lines. 7 of the claims above I re-checked in code.
 - User decisions (2026-10-27): skip the license query to the DSRL authors; public Drive checkpoints may be used (non-commercial, cite the papers). We still keep third-party code as pinned submodules, not copied into our tree.
+- Toy decoder inspection: "outside support" at mode std 0.4 is tail-reachable (min dist 0.015 over 100k noises), and decoder blur widens modes. Recorded as pre-registration amendment 001a before any steering run; 001 untouched.
+- GPU decoder training is not bitwise reproducible; seeds fix data and init but not CUDA kernels. Document as a threat to validity.
