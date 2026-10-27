@@ -1,0 +1,6 @@
+[submodule "third_party/dsrl"]
+	path = third_party/dsrl
+	url = https://github.com/ajwagen/dsrl
+[submodule "third_party/lpds"]
+	path = third_party/lpds
+	url = https://github.com/HikmetSimsir/lpds

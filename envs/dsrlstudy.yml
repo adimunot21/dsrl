@@ -1,0 +1,13 @@
+name: dsrlstudy
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - pyyaml
+  - pytest
+  - pytorch=*=cuda12*
+  - pip
