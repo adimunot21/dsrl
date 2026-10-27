@@ -3,7 +3,7 @@
 | Env | Files | Status |
 |---|---|---|
 | dsrlstudy (ours: analysis, toy experiments) | dsrlstudy.yml (intent), dsrlstudy.lock.yml (exact versions, no builds), dsrlstudy.explicit.txt (exact URLs, reproducible) | BUILT and verified |
-| dsrl_upstream (third_party/dsrl) | dsrl_upstream.yml, dsrl_upstream.md | SPEC ONLY, not built |
+| dsrl_upstream (third_party/dsrl) | dsrl_upstream.yml, .md, .lock.txt, dsrl_upstream_bench.py | BUILT, smoke-tested (Can + Hopper env stepping); no training, no checkpoints yet. See docs/upstream_build_log.md |
 | lpds_upstream (third_party/lpds) | lpds_upstream.yml, lpds_upstream.md | SPEC ONLY, not built |
 
 ## Create

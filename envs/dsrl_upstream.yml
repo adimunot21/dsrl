@@ -1,30 +1,44 @@
-# SPEC ONLY - never built. Upstream DSRL (third_party/dsrl). See dsrl_upstream.md.
-# The upstream README gives only `conda create -n dsrl python=3.9`; the rest comes from dppo/SB3 forks
-# (NOT checked out) so versions below are PROPOSED and must be reconciled with dppo/setup.py once fetched.
+# BUILT and smoke-tested 2026-10-27 (see docs/upstream_build_log.md). Exact pip freeze: dsrl_upstream.lock.txt.
+# Order matters; see dsrl_upstream.md "Verified build recipe". Not a one-shot `conda env create` (manual steps).
 name: dsrl_upstream
 channels:
   - conda-forge
 dependencies:
   - python=3.9
-  - numpy=1.26.4
   - pip
   - patchelf
   - mesalib
   - glew
   - glfw
-  - gcc_linux-64=12    # mujoco-py compiles Cython ext at first import
+  - libgl-devel
+  - libegl-devel
+  - gcc_linux-64=12    # mujoco-py compile: export CC=$CONDA_PREFIX/bin/x86_64-conda-linux-gnu-gcc
   - gxx_linux-64=12
   - pip:
-      - wheel<0.40        # needed to build gym==0.21/0.22 metadata
-      - setuptools<66
-      - "Cython<3"        # mujoco-py 2.1.2.14 breaks on Cython 3
-      - torch==2.4.0      # proposed (matches lpds); verify against dppo pin
-      - gym==0.22.0       # proposed
-      - "mujoco-py==2.1.2.14"
-      - d4rl              # see hazards: install --no-deps
-      - robomimic==0.3.0
-      - robosuite==1.4.1
+      - pip==24.0
+      - setuptools==65.7.0
+      - wheel==0.38.4
+      - Cython==0.29.37
+      - numpy==1.26.4           # must be re-pinned LAST (pip upgrades it to 2.0.2 otherwise)
+      - torch==2.4.0
+      - gym==0.22.0
+      - gymnasium==1.1.1        # needed by SB3 fork (>=0.29.1,<1.3)
+      - mujoco-py==2.1.2.14
+      - mujoco==2.3.7           # for robosuite 1.4.1
+      - d4rl==1.1               # --no-deps; skip dm_control/pybullet/mjrl (not needed for can/hopper)
+      - robomimic==0.3.0        # --no-deps; skip egl_probe (not needed)
+      # robosuite 1.4.1 = git tag v1.4.1 (c848ca8), --no-deps
+      - protobuf<5              # wandb 0.17.7 breaks on protobuf 6
+      - opencv-python-headless==4.10.0.84   # 5.x needs numpy>=2
+      - tensorboard<2.18
       - hydra-core==1.3.2
       - omegaconf==2.3.0
       - wandb==0.17.7
-      # then: pip install -e dppo[robomimic,gym] ; pip install -e stable-baselines3  (from pinned commits)
+      - av==12.3.0
+      - einops==0.8.0
+      - gdown==5.2.0
+      - imageio==2.35.1
+      - matplotlib==3.7.5
+      - pretty_errors==1.2.25
+      - tqdm==4.66.5
+      # then --no-deps -e: third_party/dsrl/dppo, third_party/dsrl/stable-baselines3

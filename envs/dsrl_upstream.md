@@ -1,33 +1,36 @@
-# Upstream DSRL environment (SPEC ONLY, not built)
+# Upstream DSRL environment (BUILT 2026-10-27, smoke-tested; no training run)
 
-Source: third_party/dsrl/README.md. Documented install: `conda create -n dsrl python=3.9`, then
-`pip install -e dppo; pip install -e dppo[robomimic]; pip install -e dppo[gym]; pip install -e stable-baselines3`.
+Full command-by-command record: docs/upstream_build_log.md. Exact versions: dsrl_upstream.lock.txt.
+Throughput script: envs/dsrl_upstream_bench.py (uses a DUMMY normalization.npz; real one is in the Drive checkpoints, not downloaded).
 
-Submodules (not checked out; `git submodule status`):
-- dppo           86ce51834055c02f9013e60dd4c4275606d82df7
-- stable-baselines3 10e5d311b5c42fe571ff3eeb72f622ca616a149d
-Both directories are empty, so exact dependency pins are UNKNOWN until fetched. dsrl_upstream.yml is a
-proposal modeled on lpds pins. Checkpoints must be downloaded by hand from Google Drive into dppo/log.
+Submodules (checked out over HTTPS, match gitlink pins): dppo 86ce518, stable-baselines3 10e5d31.
+True pins come from dppo/pyproject.toml (torch 2.4.0, gym 0.22.0, hydra-core 1.3.2, omegaconf 2.3.0, wandb 0.17.7,
+av 12.3.0, einops 0.8.0, ...; extras: cython<3, d4rl UNPINNED, robomimic==0.3.0, robosuite git tag v1.4.1) and
+stable-baselines3/setup.py (gymnasium>=0.29.1,<1.3, torch>=2.3, numpy>=1.20,<3).
 
-## Hazards
-1. Submodules empty: `git submodule update --init` needed (network; untrusted code - inspect setup.py before pip install -e, which executes it).
-2. Python 3.9 is EOL; old wheels (mujoco-py, gym 0.2x, robosuite 1.4) may have no wheels for newer deps.
-3. mujoco-py 2.1.2.14 needs MuJoCo 2.1.0 binaries in ~/.mujoco/mujoco210 (manual download from github.com/deepmind/mujoco/releases), LD_LIBRARY_PATH incl. mujoco210/bin and the NVIDIA lib dir, gcc, patchelf, GL libs (libgl1-mesa-dev, libosmesa6-dev, libglew-dev). It compiles on first import (slow, fails with GCC 13 / Cython 3: use Cython<3, gcc<=12).
-4. gym 0.21/0.22 metadata is invalid for modern pip/setuptools/wheel: pin pip<24.1, setuptools<66, wheel<0.40.
-5. d4rl: PyPI d4rl 1.1 pulls mujoco-py, mjrl (git URL, lpds pins commit 3871d93) and dm_control; install with --no-deps and add deps manually. d4rl imports may try to download datasets and print warnings about missing Flow/CARLA/mujoco.
-6. Both mujoco (3.x, used by dm-control/robosuite 1.4... robosuite 1.4 needs mujoco>=2.3.2) and mujoco-py (2.1) coexist: confirm no clash.
-7. gym vs gymnasium: SB3 fork may expect one API, dppo gym envs the other; both may be installed (lpds pins gym 0.22.0 + gymnasium 1.1.1).
-8. robomimic 0.3.0 / robosuite 1.4.1 need specific commits/versions of each other; robosuite needs mujoco GL (set MUJOCO_GL=egl or osmesa on headless).
-9. wandb imported unconditionally at top of train_dsrl.py (line 7) even if use_wandb=false: must be installed; set WANDB_MODE=disabled. Also cfg may hold WANDB entity/ API key requirements.
-10. Hydra config paths relative (`--config-path=cfg/...`), run from repo root; dppo reads env vars like DPPO_DATA_DIR / DPPO_LOG_DIR (verify once fetched).
-11. torch version must support GTX 1650 (sm_75) - fine for cu118-cu124 wheels; the system CUDA 13.2 driver is backwards compatible.
-12. Name collision: SB3 fork installs package `stable_baselines3`; cannot share an env with lpds (see lpds_upstream.md).
+## Verified build recipe
+```
+git -c url."https://github.com/".insteadOf=git@github.com: submodule update --init --recursive third_party/dsrl
+mkdir -p ~/.mujoco; curl -L https://github.com/deepmind/mujoco/releases/download/2.1.0/mujoco210-linux-x86_64.tar.gz | tar xz -C ~/.mujoco
+conda create -n dsrl_upstream -c conda-forge python=3.9 pip patchelf gcc_linux-64=12 gxx_linux-64=12 mesalib glew glfw libgl-devel libegl-devel
+conda activate dsrl_upstream
+export LD_LIBRARY_PATH=$HOME/.mujoco/mujoco210/bin:/usr/lib/nvidia:$LD_LIBRARY_PATH MUJOCO_GL=egl WANDB_MODE=disabled
+export CC=$CONDA_PREFIX/bin/x86_64-conda-linux-gnu-gcc D4RL_SUPPRESS_IMPORT_ERROR=1
+pip install "pip<24.1" "setuptools<66" "wheel<0.40" "Cython<3"
+pip install torch==2.4.0 numpy==1.26.4 ; pip install gym==0.22.0
+pip install av==12.3.0 einops==0.8.0 gdown==5.2.0 hydra-core==1.3.2 imageio==2.35.1 matplotlib==3.7.5 omegaconf==2.3.0 pretty_errors==1.2.25 tqdm==4.66.5 wandb==0.17.7
+pip install mujoco-py==2.1.2.14 cffi "glfw<2.8" lockfile ; python -c "import mujoco_py"   # compiles, ~1-2 min
+pip install --no-deps d4rl==1.1 ; pip install h5py termcolor click
+pip install mujoco==2.3.7 numba scipy Pillow opencv-python-headless pynput psutil tensorboard tensorboardX imageio-ffmpeg torchvision==0.19.0 gymnasium==1.1.1 cloudpickle pandas
+pip install --no-deps <local clone of robosuite @ v1.4.1> robomimic==0.3.0
+pip install --no-deps -e third_party/dsrl/dppo -e third_party/dsrl/stable-baselines3
+pip install "numpy==1.26.4" "protobuf<5" "opencv-python-headless<4.11" "tensorboard<2.18"   # repair step, do LAST
+```
+Why --no-deps: dppo extras pull d4rl (-> dm_control, pybullet, mjrl) and robomimic (-> egl_probe needing cmake) that are not needed for Can/Hopper.
 
-## Proposed build order
-1. conda create from dsrl_upstream.yml conda part (python 3.9, gcc 12, GL libs, patchelf) - no pip section yet.
-2. pip pin: `pip install "pip<24.1" "setuptools<66" "wheel<0.40" "Cython<3"`.
-3. Install MuJoCo 2.1 binaries to ~/.mujoco/mujoco210; export LD_LIBRARY_PATH; MUJOCO_GL=egl.
-4. torch, gym==0.22.0, mujoco-py; `python -c "import mujoco_py"` to force compile.
-5. d4rl --no-deps, mjrl, dm-control, then hydra/omegaconf/wandb.
-6. `git submodule update --init`; review setup.py files; pip install -e dppo[robomimic,gym]; pip install -e stable-baselines3.
-7. Smoke test: import chain, one gym env step, then `WANDB_MODE=disabled python train_dsrl.py ...` for a few steps.
+## Remaining caveats
+- Checkpoints + normalization.npz (Google Drive) not yet downloaded.
+- Can env is slow on CPU (python OSC controller, 25 substeps per env step); see log for numbers.
+- SB3 fork has a debug print ("env class: ...") in common/vec_env/patch_gym.py:27, spams stdout per env.
+- pip check still reports unused-package gaps (dm-control, pybullet, egl-probe, opencv-python): intentional.
+- Hazards 3/4/5 of the old spec were confirmed in part; see log for what actually bit.
