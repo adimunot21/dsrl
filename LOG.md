@@ -17,3 +17,4 @@
 - Smoke test (scripts/smoke_toy_ensemble.py, seeds 900-909, NOT a pre-registered run, not ledgered): inside/0.15/0.2, 5000 env steps; J0 -1.343, C256 -0.022, H_probe 1.321, steered return ~-0.002 on all 10 seeds (G 1.340). Plumbing only; easy config.
 - Compute: prereg 001 (1M grad steps, 10 seeds) = ~3.3 h per config on the laptop; 27 configs ~88 h; full H2 sweep on all configs would add ~470 h. Needs cloud GPU or a pre-run amendment cutting the H2 sweep. Decision pending with user.
 - Laptop CPU is firmware-locked at 800 MHz (governor/platform_profile set to performance, no_turbo write refused). A second-session prompt was given to the user to investigate (charger/BD PROCHOT suspected, unverified).
+- Runner bug found by plumbing test: steerer_batched finiteness check fired before the first update (last=NaN); fixed. Session 1 launched 2026-10-28 via scripts/overnight_001.py (tune 3 lr -> outside/0.15/0.2 full budget -> bound check).

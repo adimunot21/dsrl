@@ -338,7 +338,7 @@ def train_steerer_ensemble(
         if env_steps >= next_log or env_steps >= cfg["total_env_steps"]:
             next_log += cfg["log_every"]
             critic_loss, actor_loss = last[0].cpu(), last[1].cpu()
-            if not bool(torch.isfinite(critic_loss).all()):
+            if grad_steps > 0 and not bool(torch.isfinite(critic_loss).all()):  # `last` is NaN until the first update
                 raise RuntimeError(f"critic loss became non-finite for members {torch.nonzero(~torch.isfinite(critic_loss)).flatten().tolist()}")
             alpha = ens.log_alpha.detach().exp().cpu()
             elapsed = time.perf_counter() - start
