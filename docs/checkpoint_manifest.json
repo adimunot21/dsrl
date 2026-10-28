@@ -1,0 +1,26 @@
+{
+ "gym/halfcheetah-medium-v2/normalization.npz": {
+  "bytes": 1202,
+  "sha256": "1bc71a75b5cde71bb699cdbb4d169de9309a714b87c08bf88bd9c6c10a963e2a"
+ },
+ "gym/hopper-medium-v2/normalization.npz": {
+  "bytes": 1130,
+  "sha256": "d05b2943bc39772f7f770dfc0a4df2a9f205cb1e05ae74b585cd0dd382a0742e"
+ },
+ "gym/walker2d-medium-v2/normalization.npz": {
+  "bytes": 1202,
+  "sha256": "7d103b793b591081947fca807ae13c2752bd6964621374101f5a89a19346ae16"
+ },
+ "gym-pretrain/halfcheetah-medium-v2_pre_diffusion_mlp_ta4_td20/2024-06-12_23-04-42/checkpoint/state_3000.pt": {
+  "bytes": 4565995,
+  "sha256": "ec1169d29e2d0e006f0c2477ee8bc976b2f9b04b2c209df5bce9f36dd42596b8"
+ },
+ "gym-pretrain/hopper-medium-v2_pre_diffusion_mlp_ta4_td20/2024-06-12_23-10-05/checkpoint/state_3000.pt": {
+  "bytes": 4442859,
+  "sha256": "9a5839d3d172d1e24b5bed0831d49bb3116a7e62fafa223c57c322f4bc7e9121"
+ },
+ "gym-pretrain/walker2d-medium-v2_pre_diffusion_mlp_ta4_td20/2024-06-12_23-06-12/checkpoint/state_3000.pt": {
+  "bytes": 4565995,
+  "sha256": "1a650d5d882c78cfef1d753c532c0bdbced054738b0076efe6ce29d088681fa0"
+ }
+}
