@@ -60,8 +60,11 @@ def base_return(policy: CountedNoisePolicy, task: ToyTask, n_states: int, genera
 
 
 def search_ceiling_multi(policy: CountedNoisePolicy, task: ToyTask, n_noise_set: Sequence[int], n_states: int,
-                         generator: torch.Generator, sparse: bool = False) -> Dict[int, ProbeReading]:
+                         generator: torch.Generator, sparse: bool = False,
+                         box_bound: float | None = None) -> Dict[int, ProbeReading]:
     """C_N for several N at once using nested noise sets (first N of max(N) draws per state).
+
+    box_bound: if given, prior noise is clipped to [-box_bound, box_bound] (amendment 001c, C_N^box).
 
     Cost is n_states * max(N) decoder calls, charged once (reported on each reading as the shared total).
     """
@@ -75,6 +78,8 @@ def search_ceiling_multi(policy: CountedNoisePolicy, task: ToyTask, n_noise_set:
         s_block = states[start:start + block]
         rep = s_block.repeat_interleave(n_max, dim=0)
         noise = policy.sample_prior_noise(rep.shape[0], generator)
+        if box_bound is not None:
+            noise = noise.clamp(-box_bound, box_bound)
         reward = task.reward(rep, policy.decode(rep, noise), sparse=sparse).view(s_block.shape[0], n_max)
         for n in n_noise_set:
             best_by_n[n][start:start + block] = reward[:, :n].max(dim=1).values

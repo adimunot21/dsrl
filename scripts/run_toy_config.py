@@ -61,12 +61,16 @@ def run_main(args, run_id: str, out_dir: Path) -> dict:
                                               torch.Generator().manual_seed(CONFIG["probe_stream_seed"]))
         c_ref = probe.search_ceiling(policy, task, CONFIG["ref_noise"], CONFIG["ref_states"],
                                      torch.Generator().manual_seed(CONFIG["probe_stream_seed"] + 1))
+        box = probe.search_ceiling_multi(policy, task, CONFIG["ceiling_ns"], CONFIG["eval_states"],
+                                         torch.Generator().manual_seed(CONFIG["probe_stream_seed"]), box_bound=CONFIG["b_w"])
         ent = probe.base_action_entropy(policy, task, CONFIG["eval_states"], torch.Generator().manual_seed(CONFIG["probe_stream_seed"] + 2))
         var = probe.action_variance(policy, task, CONFIG["eval_states"], torch.Generator().manual_seed(CONFIG["probe_stream_seed"] + 3))
         probes.update({
             "reachability_gap": gap, "J0": j0.value,
             "C": {str(n): {"value": r.value, "decoder_calls": r.decoder_calls} for n, r in ceilings.items()},
             "C_ref": {"value": c_ref.value, "decoder_calls": c_ref.decoder_calls, "n_states": CONFIG["ref_states"]},
+            "C_box": {str(n): {"value": r.value, "decoder_calls": r.decoder_calls} for n, r in box.items()},
+            "H_probe_box_256": probe.headroom(box[256].value, j0.value),
             "H_ent": ent.value, "action_variance": var.value,
             "H_probe_256": probe.headroom(ceilings[256].value, j0.value),
     })
