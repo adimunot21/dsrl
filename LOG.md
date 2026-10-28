@@ -24,3 +24,12 @@
   * outside/0.15/0.2 (10 seeds, 50k env steps, 3.02 GPU-h): J0 -2.688, steered -1.356 on every seed (spread 0.002), C16 -1.423 C256 -1.176 C1024 -1.095 C_ref -0.885; H_probe(256)=1.512, gain 1.332; plateau by ~30k env steps. Gain < H_probe and < C_ref headroom (consistent with H1(i) on this config only).
   * Bound check (b_w=0.8, 50k steps, 4 seeds, 1.27 GPU-h): returns -0.832 vs analytic optimum -0.728; gap -0.104, NOT closed vs -0.107 at 1.6k steps. The agent's "under-training" explanation is refuted; cause unverified (suspect SAC entropy regularisation keeping the tanh policy inside the bound; alpha stays ~0.0185). Never exceeded the bound.
 - Entropy diagnostic (3,000 env steps, 4 seeds, analytic task): gap to optimum 0.0->-0.344, -2->-0.106, -6->-0.013, -20->0.000: SAC entropy regularisation (not under-training) explains the bound gap. DSRL's released configs use target_ent 0.0, verified train_dsrl.py:98-100. Session 1 used -dim, so it is NOT DSRL's setting; amendments 001c and 002a record consequences and add arm G (entropy-target control).
+
+## 2026-10-28 Cloud benchmark (RunPod community, RTX 3090 24 GB, AMD EPYC 7H12 shared 256-thread host)
+- Run: toy outside/0.15/0.2, 10 seeds, 50k env steps, target entropy 0.0 (DSRL's setting), OMP_NUM_THREADS=4. Commit 26e55f0.
+- Wall-clock 1884 s (31.4 min) for the whole run incl. decoder, probes (~40 s) and training (~1650 s). Laptop session 1: ~3.1 h per config => ~6x faster.
+- Probes identical to the laptop run (J0 -2.6878, C256 -1.1755, H_probe 1.512, gap 0.809): cross-hardware determinism of the probe path.
+- Steered return -1.411 (deterministic eval), gain 1.276 (seed spread 1.275-1.277), vs 1.332 at target -dim in session 1. Lower gain at target 0.0, as the entropy diagnostic predicted. Single config, so not yet a test of any hypothesis.
+- Pitfall: torch on the 256-thread host without a thread cap oversubscribes (3600% CPU); the test suite took 18m40s. Always cap OMP_NUM_THREADS.
+- $ not yet recorded: hourly rate to be read off the RunPod billing page by the user. Pod must be stopped by the user.
+- Access: RunPod proxy SSH needs commands piped to an interactive shell (no direct exec).
