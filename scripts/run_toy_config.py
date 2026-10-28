@@ -76,7 +76,7 @@ def run_main(args, run_id: str, out_dir: Path) -> dict:
     env_steps = CONFIG["full_env_steps"] if args.mode == "main" else CONFIG["tune_env_steps"]
     steer_cfg = dict(steerer.CONFIG)
     steer_cfg.update(total_env_steps=env_steps, b_w=CONFIG["b_w"], lr=args.lr, device="cuda",
-                     cuda_graph=True, log_every=max(env_steps // 10, 1))
+                     cuda_graph=True, log_every=max(env_steps // 10, 1), target_entropy=args.target_entropy)
     policy.reset_counter()
     with RunLedger("runs/ledger", run_id, {**vars(args), **CONFIG, "steerer": steer_cfg, "toy": cfg.hash()},
                    seed=seeds[0], label=f"toy-{args.mode}", num_gpus=1, cpu_cores_used=2,
@@ -127,13 +127,15 @@ def main() -> None:
     parser.add_argument("--concentration", type=float, default=0.15)
     parser.add_argument("--weakness", type=float, default=0.2)
     parser.add_argument("--lr", type=float, default=3e-4)
+    parser.add_argument("--target-entropy", type=float, default=None,
+                        help="SAC target entropy; default None = -dim (session 1). DSRL's own setting is 0.0 (amendment 001c)")
     parser.add_argument("--tag", default="")
     parser.add_argument("--env-steps", type=int, default=0, help="override env-step budget (plumbing tests only)")
     args = parser.parse_args()
     if args.env_steps:
         CONFIG["full_env_steps"] = CONFIG["tune_env_steps"] = args.env_steps
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
-    run_id = f"toy_{args.mode}_{args.support}_{args.concentration}_{args.weakness}_lr{args.lr}{args.tag}"
+    run_id = f"toy_{args.mode}_{args.support}_{args.concentration}_{args.weakness}_lr{args.lr}_ent{args.target_entropy}{args.tag}"
     out_dir = Path("runs/toy") / run_id
     out_dir.mkdir(parents=True, exist_ok=False)
     start = time.time()
