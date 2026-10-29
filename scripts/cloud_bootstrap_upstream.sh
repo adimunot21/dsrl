@@ -3,6 +3,8 @@
 # Run AFTER scripts/cloud_bootstrap.sh has cloned the repo to ~/dsrl:  bash scripts/cloud_bootstrap_upstream.sh
 # Pip installs go in SEPARATE steps on purpose (one combined resolve hung >10 min in the laptop build).
 set -eo pipefail
+# mujoco-py compiles against GL/osmesa.h (system headers on the laptop; absent on a fresh pod)
+(apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq libosmesa6-dev libgl1-mesa-dev libglew-dev libglfw3 patchelf) || echo "apt step failed; mujoco-py compile may fail"
 source "$HOME/miniforge3/etc/profile.d/conda.sh"
 cd "$HOME/dsrl"
 git -c url."https://github.com/".insteadOf=git@github.com: submodule update --init --recursive third_party/dsrl
