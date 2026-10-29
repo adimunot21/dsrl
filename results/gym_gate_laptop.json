@@ -1,0 +1,11 @@
+{
+  "what": "Throughput gate, arm A (DSRL-SAC as released, algorithm=dsrl_sac), Hopper, seed 100 (a tuning-range seed; not a reported seed), 15-min cap, real training loop",
+  "hardware": "Lenovo Legion Y540, i7-9750H locked at 800 MHz, GTX 1650, 2 BLAS threads",
+  "pinned_commit": "third_party/dsrl 8d21b9c",
+  "timesteps_per_second_training": 5.65,
+  "raw_env_steps_per_second": 22.6,
+  "derivation": "SB3 num_timesteps counts chunk-steps summed over n_envs=4; act_steps=4 raw steps per chunk-step; rate measured between tensorboard log points 584 and 2640 over 364 s (excludes the slow initial 25-episode eval)",
+  "implied_time_for_200k_raw_steps_hours": 2.5,
+  "initial_ep_rew_mean_base_policy": 1468,
+  "note": "pessimistic: CPU is firmware-locked at 800 MHz. Cloud rate unmeasured."
+}

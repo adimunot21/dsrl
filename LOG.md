@@ -44,3 +44,9 @@
 - H1(i): 0/270 (config,seed) runs exceed C_ref-J0+0.05 -> passes.
 - H1(ii): exactly 6 unreachable configs (all outside, conc 0.05/0.15); mean gain 1.163 CI [0.979,1.330] vs inside 1.248 -> NOT SUPPORTED. The pre-registered expectation (gain ~0 when outside) was wrong under dense reward: partial credit for getting closer. Not redefined post hoc.
 - Entropy subset (9 configs, exploratory): target -2 gives higher gain than 0.0 in 9/9 configs (+0.01 to +0.09).
+
+## 2026-10-29 Gym phase: laptop throughput gate + patch 0001
+- Arm A (algorithm=dsrl_sac; NOTE the released Gym config default is dsrl_na) on Hopper, tuning seed 100, 15 min: 5.65 chunk-timesteps/s = ~22.6 raw sim steps/s => ~2.5 h per 200k-raw-step run. Base policy ep_rew_mean ~1470 at start. Base policy loaded with weights_only=True (verified in dppo/model/diffusion/diffusion_eval.py:33-35).
+- Full arm grid ~270 runs => ~700 laptop-hours: laptop route infeasible beyond a few runs. Need a cloud rate gate before fixing T (prereg 002: T in configs/ before first reported run).
+- patches/0001_truncation_and_raw_step_budget.patch (applies cleanly to dsrl 8d21b9c): (1) ActionChunkWrapper reports terminated/truncated separately using the inner env's TimeLimit.truncated info and the chunk wrapper's own limit, so time-outs are bootstrapped; (2) total_timesteps = cfg.total_raw_env_steps // act_steps (default 80M raw == released 20M chunk-steps). Not yet run; arm C = A + this patch.
+- Launch recipe (no submodule edits): cd third_party/dsrl; LD_LIBRARY_PATH=$HOME/.mujoco/mujoco210/bin:/usr/lib/nvidia MUJOCO_GL=egl python train_dsrl.py --config-path $PWD/cfg/gym --config-name dsrl_hopper.yaml algorithm=dsrl_sac use_wandb=False seed=S log_dir=... base_policy_path=<abs> normalization_path=<abs>

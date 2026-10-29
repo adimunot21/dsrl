@@ -1,0 +1,35 @@
+--- a/env_utils.py	2026-10-29 21:05:05.542756538 +0000
++++ b/env_utils.py	2026-10-29 21:05:05.631870559 +0000
+@@ -175,13 +175,15 @@
+ 			info_.append(info_i)
+ 		obs = obs_[-1]
+ 		reward = sum(reward_)
+-		done = np.max(done_)
++		# PATCH 0001: separate true termination from time-limit truncation (released code folded both into `done`
++		# and hard-coded truncated=False, so time-outs were bootstrapped as terminal states).
++		inner_timeout = any(i.get('TimeLimit.truncated', False) for i in info_)
++		terminated = bool(np.max(done_)) and not inner_timeout
++		truncated = (inner_timeout or self.count >= self.max_episode_steps) and not terminated
+ 		info = info_[-1]
+-		if self.count >= self.max_episode_steps:
+-			done = True
+-		if done:
++		if terminated or truncated:
+ 			info['terminal_observation'] = obs
+-		return obs, reward, done, False, info
++		return obs, reward, terminated, truncated, info
+ 
+ 	def render(self):
+ 		return self.env.render()
+--- a/train_dsrl.py	2026-10-29 21:05:05.542958913 +0000
++++ b/train_dsrl.py	2026-10-29 21:05:05.632870561 +0000
+@@ -175,7 +175,8 @@
+ 	callbacks = [checkpoint_callback, logging_callback]
+ 	# Train the agent
+ 	model.learn(
+-		total_timesteps=20000000,
++		# PATCH 0001: budget in raw simulator steps (default 80M raw = the released 20M chunk-steps at act_steps=4)
++		total_timesteps=int(cfg.get('total_raw_env_steps', 80000000)) // cfg.act_steps,
+ 		callback = callbacks
+ 	)
+ 
