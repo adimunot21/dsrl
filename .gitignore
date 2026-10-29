@@ -8,3 +8,7 @@ data/
 *.log
 runs/
 *.pth
+
+# synced cloud results are small and must be tracked
+!results/**/runs/
+!results/**/runs/**
