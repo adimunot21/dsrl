@@ -7,7 +7,7 @@ source "$HOME/miniforge3/etc/profile.d/conda.sh"
 cd "$HOME/dsrl"
 git -c url."https://github.com/".insteadOf=git@github.com: submodule update --init --recursive third_party/dsrl
 mkdir -p ~/.mujoco
-[ -d ~/.mujoco/mujoco210 ] || curl -L https://github.com/deepmind/mujoco/releases/download/2.1.0/mujoco210-linux-x86_64.tar.gz | tar xz -C ~/.mujoco
+[ -d ~/.mujoco/mujoco210 ] || curl -L https://github.com/deepmind/mujoco/releases/download/2.1.0/mujoco210-linux-x86_64.tar.gz | tar xz --no-same-owner -C ~/.mujoco
 conda create -y -n dsrl_upstream -c conda-forge python=3.9 pip patchelf gcc_linux-64=12 gxx_linux-64=12 mesalib glew glfw libgl-devel libegl-devel
 conda activate dsrl_upstream
 export LD_LIBRARY_PATH=$HOME/.mujoco/mujoco210/bin:/usr/lib/nvidia:${LD_LIBRARY_PATH:-} MUJOCO_GL=egl WANDB_MODE=disabled
