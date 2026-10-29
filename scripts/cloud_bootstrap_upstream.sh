@@ -13,6 +13,7 @@ mkdir -p ~/.mujoco
 conda env list | grep -q "^dsrl_upstream " || conda create -y -n dsrl_upstream -c conda-forge python=3.9 pip patchelf gcc_linux-64=12 gxx_linux-64=12 mesalib glew glfw libgl-devel libegl-devel
 conda activate dsrl_upstream
 export LD_LIBRARY_PATH=$HOME/.mujoco/mujoco210/bin:/usr/lib/nvidia:${LD_LIBRARY_PATH:-} MUJOCO_GL=egl WANDB_MODE=disabled
+export CPATH=/usr/include:/usr/include/x86_64-linux-gnu LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
 export CC=$CONDA_PREFIX/bin/x86_64-conda-linux-gnu-gcc D4RL_SUPPRESS_IMPORT_ERROR=1
 pip install "pip<24.1" "setuptools<66" "wheel<0.40" "Cython<3"
 pip install torch==2.4.0 numpy==1.26.4
