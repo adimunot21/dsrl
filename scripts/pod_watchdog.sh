@@ -24,7 +24,7 @@ while true; do
   [ -f /root/STOP_NOW ] && stop_pod "STOP_NOW file"
   [ "$elapsed_min" -ge "$HARD_LIMIT_MIN" ] && stop_pod "hard limit ${HARD_LIMIT_MIN}min"
   [ "$elapsed_min" -ge $((HARD_LIMIT_MIN - 15)) ] && touch /root/WARN_DEADLINE
-  if pgrep -x -f "$(echo python)" >/dev/null 2>&1 || pgrep -x python >/dev/null || pgrep -x pip >/dev/null || pgrep -x conda >/dev/null \
+  if pgrep -x python >/dev/null || pgrep -x pip >/dev/null || pgrep -x conda >/dev/null \
      || pgrep -x git >/dev/null || pgrep -x curl >/dev/null || pgrep -x tar >/dev/null || pgrep -x wget >/dev/null || pgrep -f "bin/python|bin/pip|bin/conda" >/dev/null; then
     idle_since=""
   else
