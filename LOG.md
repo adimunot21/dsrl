@@ -33,3 +33,14 @@
 - Pitfall: torch on the 256-thread host without a thread cap oversubscribes (3600% CPU); the test suite took 18m40s. Always cap OMP_NUM_THREADS.
 - $ not yet recorded: hourly rate to be read off the RunPod billing page by the user. Pod must be stopped by the user.
 - Access: RunPod proxy SSH needs commands piped to an interactive shell (no direct exec).
+
+## 2026-10-29 Cloud spend (user-reported)
+- User reports ~$10 spent in total since the pod was started (RunPod community RTX 3090, $0.5/h): setup + tests + benchmark + 36-job grid. Approximate, from the user's memory of the billing page; replace with the exact figure if given.
+- Cumulative project cloud spend: ~$10 of the $100 cap (stop line $80). 36 jobs x ~31.7 min = ~19 h GPU for the grid.
+
+## 2026-10-29 Pre-registered grid analysis (scripts/analyze_toy_grid.py -> results/toy_grid_analysis.json)
+- H3 primary: rho(H_probe_256, G)=0.736, CI [0.420, 0.912]; rho(H_ent, G)=0.409. By the letter SUPPORTED (rho>=0.7 and CI lower bound 0.420 > 0.409), but the margin over entropy is 0.011 -> fragile. Kill rule (rho<0.5) not triggered.
+- Secondary (not used to support H3): box ceiling rho=0.944 [0.822,0.990]; action variance 0.499; C_ref headroom 0.653.
+- H1(i): 0/270 (config,seed) runs exceed C_ref-J0+0.05 -> passes.
+- H1(ii): exactly 6 unreachable configs (all outside, conc 0.05/0.15); mean gain 1.163 CI [0.979,1.330] vs inside 1.248 -> NOT SUPPORTED. The pre-registered expectation (gain ~0 when outside) was wrong under dense reward: partial credit for getting closer. Not redefined post hoc.
+- Entropy subset (9 configs, exploratory): target -2 gives higher gain than 0.0 in 9/9 configs (+0.01 to +0.09).
