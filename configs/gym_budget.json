@@ -1,0 +1,18 @@
+{
+  "written": "2026-10-29, before any reported Gym run (prereg 002 budget gate)",
+  "task_scope": ["hopper-medium-v2"],
+  "scope_reason": "User's remaining cloud budget is ~$10 (stated 2026-10-29), far below the original $100 cap. Walker2d/HalfCheetah and LP-DS arms (B, E) are not run in this stage; reported as a scope reduction.",
+  "total_raw_env_steps": 200000,
+  "total_chunk_timesteps": 50000,
+  "act_steps": 4,
+  "stage_1_arms": ["A", "C"],
+  "stage_1_reporting_seeds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "measured_rate_per_run_parallel8": {"timesteps_per_s": 15.0, "raw_steps_per_s": 60.0, "hardware": "RunPod RTX 3090 pod, 32 vCPU allocated, 8 concurrent runs, OMP_NUM_THREADS=1"},
+  "expected_hours_per_run": 0.93,
+  "arm_definitions": {
+    "A": "pinned code + patch 0002 (stop rule) + patch 0003 (local eval log); algorithm=dsrl_sac; no learning changes",
+    "C": "A + patch 0001 (truncation fix)"
+  },
+  "metric": "mean of evaluation reward over the last 10% of training evaluation checkpoints (prereg 002)",
+  "parallel_runs": 10
+}

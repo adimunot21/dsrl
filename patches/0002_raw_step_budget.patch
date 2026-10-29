@@ -1,0 +1,12 @@
+--- a/train_dsrl.py	2026-10-29 22:41:47.196464705 +0000
++++ b/train_dsrl.py	2026-10-29 22:41:47.283354547 +0000
+@@ -175,7 +175,8 @@
+ 	callbacks = [checkpoint_callback, logging_callback]
+ 	# Train the agent
+ 	model.learn(
+-		total_timesteps=20000000,
++		# PATCH budget (stop rule only, no effect on learning): raw simulator steps; default 80M raw == released 20M chunk-steps
++		total_timesteps=int(cfg.get('total_raw_env_steps', 80000000)) // cfg.act_steps,
+ 		callback = callbacks
+ 	)
+ 

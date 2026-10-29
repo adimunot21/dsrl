@@ -28,8 +28,12 @@ pip install mujoco==2.3.7 numba scipy Pillow opencv-python-headless pynput psuti
 pip install --no-deps /root/robosuite robomimic==0.3.0
 pip install --no-deps -e third_party/dsrl/dppo -e third_party/dsrl/stable-baselines3
 pip install "numpy==1.26.4" "protobuf<5" "opencv-python-headless<4.11" "tensorboard<2.18"   # repair step, LAST
-# Patched copy for arm C (patches/ applied to a clean copy; the submodule itself stays untouched)
-rm -rf /root/dsrl_patched && cp -r third_party/dsrl /root/dsrl_patched && (cd /root/dsrl_patched && git apply "$HOME/dsrl/patches/0001_truncation_and_raw_step_budget.patch" 2>/dev/null || patch -p1 < "$HOME/dsrl/patches/0001_truncation_and_raw_step_budget.patch")
+# Code copies (patches/ applied to clean copies; the submodule itself stays untouched):
+#   dsrl_base    = pinned + 0002 raw-step stop rule + 0003 local eval log   (arms A, F; neither changes learning)
+#   dsrl_patched = dsrl_base + 0001 truncation fix                          (arms C, D, G)
+for d in dsrl_base dsrl_patched; do rm -rf "/root/$d"; cp -r third_party/dsrl "/root/$d"; done
+for d in dsrl_base dsrl_patched; do for pf in 0002_raw_step_budget 0003_eval_log; do (cd "/root/$d" && patch -p1 < "$HOME/dsrl/patches/$pf.patch"); done; done
+(cd /root/dsrl_patched && patch -p1 < "$HOME/dsrl/patches/0001_truncation_fix.patch")
 python - <<'PY'
 import sys; sys.path.insert(0, "/root/dsrl/third_party/dsrl"); sys.path.append("/root/dsrl/third_party/dsrl/dppo")
 import gym, d4rl, d4rl.gym_mujoco, torch
