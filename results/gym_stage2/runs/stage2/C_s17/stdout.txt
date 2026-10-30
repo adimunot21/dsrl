@@ -1,9 +1,9 @@
 Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
 Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
 See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
-[2026-10-30 11:10:23,269][root][INFO] - Number of network parameters: 553020
-[2026-10-30 11:10:23,442][root][INFO] - Actor weights not found. Using pre-trained weights!
-[2026-10-30 11:10:23,443][root][INFO] - Loaded base policy weights from /root/dsrl/data/dppo_log/gym-pretrain/hopper-medium-v2_pre_diffusion_mlp_ta4_td20/2024-06-12_23-10-05/checkpoint/state_3000.pt
+[2026-10-30 14:16:47,577][root][INFO] - Number of network parameters: 553020
+[2026-10-30 14:16:47,729][root][INFO] - Actor weights not found. Using pre-trained weights!
+[2026-10-30 14:16:47,729][root][INFO] - Loaded base policy weights from /root/dsrl/data/dppo_log/gym-pretrain/hopper-medium-v2_pre_diffusion_mlp_ta4_td20/2024-06-12_23-10-05/checkpoint/state_3000.pt
 Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
 Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
 See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
@@ -51,12 +51,6 @@ Is instance: True
 Using cuda device
 Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
 Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
-See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
-Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
-See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
-
-Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
-Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
 See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
 Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
 Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
@@ -124,117 +118,12 @@ See the migration guide at https://gymnasium.farama.org/introduction/migration_g
 Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
 Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
 See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
-env class: <class 'env_utils.ActionChunkWrapper'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'stable_baselines3.common.monitor.Monitor'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'env_utils.ActionChunkWrapper'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'stable_baselines3.common.monitor.Monitor'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'env_utils.ActionChunkWrapper'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'stable_baselines3.common.monitor.Monitor'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'env_utils.ActionChunkWrapper'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'stable_baselines3.common.monitor.Monitor'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'env_utils.ActionChunkWrapper'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'stable_baselines3.common.monitor.Monitor'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'env_utils.ActionChunkWrapper'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'stable_baselines3.common.monitor.Monitor'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'env_utils.ActionChunkWrapper'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'stable_baselines3.common.monitor.Monitor'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'env_utils.ActionChunkWrapper'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'stable_baselines3.common.monitor.Monitor'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'env_utils.ActionChunkWrapper'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'stable_baselines3.common.monitor.Monitor'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'env_utils.ActionChunkWrapper'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'stable_baselines3.common.monitor.Monitor'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'env_utils.ActionChunkWrapper'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'stable_baselines3.common.monitor.Monitor'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'env_utils.ActionChunkWrapper'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-env class: <class 'stable_baselines3.common.monitor.Monitor'>
-gymnasium.Env class: <class 'gymnasium.core.Env'>
-MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
-Is instance: True
-Process ForkServerProcess-5:
-Traceback (most recent call last):
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/root/dsrl/third_party/dsrl/stable-baselines3/stable_baselines3/common/vec_env/subproc_vec_env.py", line 55, in _worker
-    remote.send((env.observation_space, env.action_space))
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 206, in send
-    self._send_bytes(_ForkingPickler.dumps(obj))
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 411, in _send_bytes
-    self._send(header + buf)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 368, in _send
-    n = write(self._handle, buf)
-BrokenPipeError: [Errno 32] Broken pipe
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
 env class: <class 'env_utils.ActionChunkWrapper'>
 gymnasium.Env class: <class 'gymnasium.core.Env'>
 MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
@@ -339,3 +228,532 @@ env class: <class 'stable_baselines3.common.monitor.Monitor'>
 gymnasium.Env class: <class 'gymnasium.core.Env'>
 MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
 Is instance: True
+env class: <class 'env_utils.ActionChunkWrapper'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'stable_baselines3.common.monitor.Monitor'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'env_utils.ActionChunkWrapper'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'stable_baselines3.common.monitor.Monitor'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'env_utils.ActionChunkWrapper'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'stable_baselines3.common.monitor.Monitor'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'env_utils.ActionChunkWrapper'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'stable_baselines3.common.monitor.Monitor'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'env_utils.ActionChunkWrapper'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'stable_baselines3.common.monitor.Monitor'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'env_utils.ActionChunkWrapper'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'stable_baselines3.common.monitor.Monitor'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'env_utils.ActionChunkWrapper'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'stable_baselines3.common.monitor.Monitor'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'env_utils.ActionChunkWrapper'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'stable_baselines3.common.monitor.Monitor'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'env_utils.ActionChunkWrapper'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'stable_baselines3.common.monitor.Monitor'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'env_utils.ActionChunkWrapper'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'stable_baselines3.common.monitor.Monitor'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'env_utils.ActionChunkWrapper'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'stable_baselines3.common.monitor.Monitor'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'env_utils.ActionChunkWrapper'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'stable_baselines3.common.monitor.Monitor'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+eval episode 0 at timestep 0
+eval episode 1 at timestep 0
+eval episode 2 at timestep 0
+eval episode 3 at timestep 0
+eval episode 4 at timestep 0
+eval episode 5 at timestep 0
+eval episode 6 at timestep 0
+eval episode 7 at timestep 0
+Logging to /root/runs/stage2/C_s17/gym-dsrl/gym_hopper_dsrl_2026-10-30_14-16-46_17/2026-10-30_14-16-46_17/SAC_1
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 117      |
+|    ep_rew_mean     | 1.48e+03 |
+| time/              |          |
+|    episodes        | 4        |
+|    fps             | 18       |
+|    time_elapsed    | 26       |
+|    total_timesteps | 488      |
+| train/             |          |
+|    actor_loss      | -52.2    |
+|    critic_loss     | 114      |
+|    ent_coef        | 0.699    |
+|    ent_coef_loss   | -2.92    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 1200     |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 115      |
+|    ep_rew_mean     | 1.44e+03 |
+| time/              |          |
+|    episodes        | 8        |
+|    fps             | 17       |
+|    time_elapsed    | 54       |
+|    total_timesteps | 968      |
+| train/             |          |
+|    actor_loss      | -92.5    |
+|    critic_loss     | 78.1     |
+|    ent_coef        | 0.488    |
+|    ent_coef_loss   | -5.77    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 2400     |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 112      |
+|    ep_rew_mean     | 1.4e+03  |
+| time/              |          |
+|    episodes        | 12       |
+|    fps             | 17       |
+|    time_elapsed    | 82       |
+|    total_timesteps | 1452     |
+| train/             |          |
+|    actor_loss      | -132     |
+|    critic_loss     | 55.5     |
+|    ent_coef        | 0.34     |
+|    ent_coef_loss   | -8.4     |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 3620     |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 111      |
+|    ep_rew_mean     | 1.38e+03 |
+| time/              |          |
+|    episodes        | 16       |
+|    fps             | 17       |
+|    time_elapsed    | 106      |
+|    total_timesteps | 1860     |
+| train/             |          |
+|    actor_loss      | -164     |
+|    critic_loss     | 44.6     |
+|    ent_coef        | 0.252    |
+|    ent_coef_loss   | -10.5    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 4640     |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 111      |
+|    ep_rew_mean     | 1.38e+03 |
+| time/              |          |
+|    episodes        | 20       |
+|    fps             | 17       |
+|    time_elapsed    | 129      |
+|    total_timesteps | 2276     |
+| train/             |          |
+|    actor_loss      | -195     |
+|    critic_loss     | 34.5     |
+|    ent_coef        | 0.187    |
+|    ent_coef_loss   | -12.1    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 5680     |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 112      |
+|    ep_rew_mean     | 1.4e+03  |
+| time/              |          |
+|    episodes        | 24       |
+|    fps             | 17       |
+|    time_elapsed    | 159      |
+|    total_timesteps | 2792     |
+| train/             |          |
+|    actor_loss      | -235     |
+|    critic_loss     | 28.3     |
+|    ent_coef        | 0.129    |
+|    ent_coef_loss   | -14.2    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 6960     |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 113      |
+|    ep_rew_mean     | 1.41e+03 |
+| time/              |          |
+|    episodes        | 28       |
+|    fps             | 17       |
+|    time_elapsed    | 193      |
+|    total_timesteps | 3348     |
+| train/             |          |
+|    actor_loss      | -278     |
+|    critic_loss     | 23.8     |
+|    ent_coef        | 0.0872   |
+|    ent_coef_loss   | -14.8    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 8360     |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 115      |
+|    ep_rew_mean     | 1.44e+03 |
+| time/              |          |
+|    episodes        | 32       |
+|    fps             | 17       |
+|    time_elapsed    | 220      |
+|    total_timesteps | 3788     |
+| train/             |          |
+|    actor_loss      | -310     |
+|    critic_loss     | 20.9     |
+|    ent_coef        | 0.0646   |
+|    ent_coef_loss   | -14.6    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 9460     |
+---------------------------------
+eval episode 0 at timestep 24004
+eval episode 1 at timestep 24004
+eval episode 2 at timestep 24004
+eval episode 3 at timestep 24004
+eval episode 4 at timestep 24004
+eval episode 5 at timestep 24004
+eval episode 6 at timestep 24004
+eval episode 7 at timestep 24004
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 113      |
+|    ep_rew_mean     | 1.41e+03 |
+| time/              |          |
+|    episodes        | 36       |
+|    fps             | 15       |
+|    time_elapsed    | 267      |
+|    total_timesteps | 4184     |
+| train/             |          |
+|    actor_loss      | -340     |
+|    critic_loss     | 20.5     |
+|    ent_coef        | 0.0495   |
+|    ent_coef_loss   | -14.4    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 10440    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 114      |
+|    ep_rew_mean     | 1.41e+03 |
+| time/              |          |
+|    episodes        | 40       |
+|    fps             | 15       |
+|    time_elapsed    | 293      |
+|    total_timesteps | 4628     |
+| train/             |          |
+|    actor_loss      | -373     |
+|    critic_loss     | 36.3     |
+|    ent_coef        | 0.0371   |
+|    ent_coef_loss   | -10.4    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 11560    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 111      |
+|    ep_rew_mean     | 1.38e+03 |
+| time/              |          |
+|    episodes        | 44       |
+|    fps             | 15       |
+|    time_elapsed    | 318      |
+|    total_timesteps | 5056     |
+| train/             |          |
+|    actor_loss      | -402     |
+|    critic_loss     | 18.9     |
+|    ent_coef        | 0.0297   |
+|    ent_coef_loss   | -7.21    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 12620    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 110      |
+|    ep_rew_mean     | 1.37e+03 |
+| time/              |          |
+|    episodes        | 48       |
+|    fps             | 15       |
+|    time_elapsed    | 344      |
+|    total_timesteps | 5508     |
+| train/             |          |
+|    actor_loss      | -436     |
+|    critic_loss     | 20.1     |
+|    ent_coef        | 0.0275   |
+|    ent_coef_loss   | 1.02     |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 13760    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 110      |
+|    ep_rew_mean     | 1.36e+03 |
+| time/              |          |
+|    episodes        | 52       |
+|    fps             | 16       |
+|    time_elapsed    | 362      |
+|    total_timesteps | 5828     |
+| train/             |          |
+|    actor_loss      | -459     |
+|    critic_loss     | 18.3     |
+|    ent_coef        | 0.0289   |
+|    ent_coef_loss   | 1.78     |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 14560    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 108      |
+|    ep_rew_mean     | 1.34e+03 |
+| time/              |          |
+|    episodes        | 56       |
+|    fps             | 16       |
+|    time_elapsed    | 384      |
+|    total_timesteps | 6196     |
+| train/             |          |
+|    actor_loss      | -481     |
+|    critic_loss     | 17.1     |
+|    ent_coef        | 0.0353   |
+|    ent_coef_loss   | 4.24     |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 15480    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 108      |
+|    ep_rew_mean     | 1.34e+03 |
+| time/              |          |
+|    episodes        | 60       |
+|    fps             | 16       |
+|    time_elapsed    | 408      |
+|    total_timesteps | 6628     |
+| train/             |          |
+|    actor_loss      | -512     |
+|    critic_loss     | 50.8     |
+|    ent_coef        | 0.0471   |
+|    ent_coef_loss   | 3.19     |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 16560    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 108      |
+|    ep_rew_mean     | 1.34e+03 |
+| time/              |          |
+|    episodes        | 64       |
+|    fps             | 16       |
+|    time_elapsed    | 431      |
+|    total_timesteps | 7044     |
+| train/             |          |
+|    actor_loss      | -534     |
+|    critic_loss     | 35.2     |
+|    ent_coef        | 0.0588   |
+|    ent_coef_loss   | 6.39     |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 17600    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 108      |
+|    ep_rew_mean     | 1.34e+03 |
+| time/              |          |
+|    episodes        | 68       |
+|    fps             | 16       |
+|    time_elapsed    | 457      |
+|    total_timesteps | 7484     |
+| train/             |          |
+|    actor_loss      | -565     |
+|    critic_loss     | 21.1     |
+|    ent_coef        | 0.0758   |
+|    ent_coef_loss   | 0.841    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 18700    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 108      |
+|    ep_rew_mean     | 1.34e+03 |
+| time/              |          |
+|    episodes        | 72       |
+|    fps             | 16       |
+|    time_elapsed    | 481      |
+|    total_timesteps | 7900     |
+| train/             |          |
+|    actor_loss      | -588     |
+|    critic_loss     | 38.6     |
+|    ent_coef        | 0.0785   |
+|    ent_coef_loss   | -0.282   |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 19740    |
+---------------------------------
+eval episode 0 at timestep 40004
+eval episode 1 at timestep 40004
+eval episode 2 at timestep 40004
+eval episode 3 at timestep 40004
+eval episode 4 at timestep 40004
+eval episode 5 at timestep 40004
+eval episode 6 at timestep 40004
+eval episode 7 at timestep 40004
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 107      |
+|    ep_rew_mean     | 1.34e+03 |
+| time/              |          |
+|    episodes        | 76       |
+|    fps             | 15       |
+|    time_elapsed    | 530      |
+|    total_timesteps | 8284     |
+| train/             |          |
+|    actor_loss      | -615     |
+|    critic_loss     | 49.4     |
+|    ent_coef        | 0.087    |
+|    ent_coef_loss   | 1.33     |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 20700    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 107      |
+|    ep_rew_mean     | 1.35e+03 |
+| time/              |          |
+|    episodes        | 80       |
+|    fps             | 15       |
+|    time_elapsed    | 557      |
+|    total_timesteps | 8768     |
+| train/             |          |
+|    actor_loss      | -638     |
+|    critic_loss     | 46.6     |
+|    ent_coef        | 0.0969   |
+|    ent_coef_loss   | 0.797    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 21900    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 107      |
+|    ep_rew_mean     | 1.34e+03 |
+| time/              |          |
+|    episodes        | 84       |
+|    fps             | 15       |
+|    time_elapsed    | 576      |
+|    total_timesteps | 9096     |
+| train/             |          |
+|    actor_loss      | -655     |
+|    critic_loss     | 50       |
+|    ent_coef        | 0.108    |
+|    ent_coef_loss   | 0.899    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 22720    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 107      |
+|    ep_rew_mean     | 1.34e+03 |
+| time/              |          |
+|    episodes        | 88       |
+|    fps             | 15       |
+|    time_elapsed    | 604      |
+|    total_timesteps | 9588     |
+| train/             |          |
+|    actor_loss      | -681     |
+|    critic_loss     | 53.6     |
+|    ent_coef        | 0.119    |
+|    ent_coef_loss   | 0.632    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 23960    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 108      |
+|    ep_rew_mean     | 1.35e+03 |
+| time/              |          |
+|    episodes        | 92       |
+|    fps             | 15       |
+|    time_elapsed    | 630      |
+|    total_timesteps | 10060    |
+| train/             |          |
+|    actor_loss      | -702     |
+|    critic_loss     | 86.5     |
+|    ent_coef        | 0.123    |
+|    ent_coef_loss   | 0.275    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 25140    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 108      |
+|    ep_rew_mean     | 1.35e+03 |
+| time/              |          |
+|    episodes        | 96       |
+|    fps             | 16       |
+|    time_elapsed    | 656      |
+|    total_timesteps | 10544    |
+| train/             |          |
+|    actor_loss      | -725     |
+|    critic_loss     | 52.3     |
+|    ent_coef        | 0.138    |
+|    ent_coef_loss   | 0.173    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 26340    |
+---------------------------------

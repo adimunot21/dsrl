@@ -10,3 +10,4 @@
 {"timesteps": 36000, "deterministic": false, "reward": 1629.6730631243965, "success_rate": 1.0, "unix_time": 1793368826.952169}
 {"timesteps": 40000, "deterministic": false, "reward": 1614.4798646715033, "success_rate": 1.0, "unix_time": 1793369074.1048107}
 {"timesteps": 44000, "deterministic": false, "reward": 1882.1704049580853, "success_rate": 1.0, "unix_time": 1793369325.0689886}
+{"timesteps": 48000, "deterministic": false, "reward": 1824.785749964345, "success_rate": 1.0, "unix_time": 1793369582.6639059}
