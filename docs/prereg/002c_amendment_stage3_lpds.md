@@ -1,7 +1,7 @@
 # 002c: Stage 3 (arm B, LP-DS as released, Hopper), written 2026-10-30 before any LP-DS run
 
 - Label: REPRODUCTION (released LP-DS code and default config, our pin) compared against arm A (stage 2).
-- Arm B: third_party/lpds pinned commit 6ac778a + patch 0004 (logging only), `cfg/gym/lpds_hopper.yaml` unchanged (target_l2_deviation 0.02 = the released default; the paper table's 0.35-0.50 is unresolved, audit.md), Hopper, 200,000 raw steps (`total_timesteps=50000` chunk-steps; verified on a laptop smoke test that eval timestamps count the same way as DSRL's), `eval_interval=1000`, seeds 10-19, 5 concurrent.
+- Arm B: third_party/lpds pinned commit 6ac778a + patch 0004 (logging only), `cfg/gym/lpds_hopper.yaml` unchanged (target_l2_deviation 0.02 = the released default; the paper table's 0.35-0.50 is unresolved, audit.md), Hopper, 200,000 raw steps (`total_timesteps=50000` chunk-steps; verified on a laptop smoke test that eval timestamps count the same way as DSRL's), `eval_interval=1000`, seeds 10-19, 4 concurrent (the only pod available had 9 vCPUs; concurrency does not change learning).
 - Comparator: arm A from stage 2 (same seeds 10-19, same eval_interval, same step budget). Arm A is NOT re-run.
 - Checkpoint: LP-DS's shipped Hopper checkpoint and normalization have the same sha256 as DSRL's (9a5839d3..., d05b2943...); no substitution needed.
 - Metric: mean eval reward of the last 3 evals (as 002b). Primary: paired-by-seed-index bootstrap CI of B - A (10,000 resamples, seed 20261030). B better if lower bound > 0; A better if upper bound < 0; else no detectable difference.
