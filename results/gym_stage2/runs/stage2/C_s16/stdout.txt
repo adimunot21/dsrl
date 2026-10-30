@@ -2248,3 +2248,20 @@ eval episode 7 at timestep 200004
 |    learning_rate   | 0.0003    |
 |    n_updates       | 123920    |
 ----------------------------------
+----------------------------------
+| rollout/           |           |
+|    ep_len_mean     | 121       |
+|    ep_rew_mean     | 1.54e+03  |
+| time/              |           |
+|    episodes        | 432       |
+|    fps             | 15        |
+|    time_elapsed    | 3174      |
+|    total_timesteps | 49984     |
+| train/             |           |
+|    actor_loss      | -1.03e+03 |
+|    critic_loss     | 592       |
+|    ent_coef        | 0.278     |
+|    ent_coef_loss   | 0.0421    |
+|    learning_rate   | 0.0003    |
+|    n_updates       | 124940    |
+----------------------------------
