@@ -57,3 +57,6 @@
 - Arm A (released DSRL-SAC): 1908 [1826, 2002] (bootstrap CI over seeds); base policy initial eval ~1616-1631. Gain over initial +292 [211, 379].
 - Arm C (truncation fix): 1763 [1702, 1833]; gain +133 [59, 212].
 - C - A paired by seed: -144 [-248, -38]; C > A in 2/10 seeds. The truncation fix did NOT help here; it lowered the final return. Not the direction H5 anticipated; reported as is, no redefinition. Mechanism not established (possible: bootstrapping through time-limit changes value targets/exploration; or eval noise with 4 evals). Total ~ $2.3-2.8 spent of ~$10.
+
+## 2026-10-30 Stage 2 launch incident (A40-class replacement: RTX 4000 Ada pod, 18 vCPU, 71 GB, ~$0.5/h)
+- 10 concurrent runs x 29 env workers on 18 vCPUs: 15 of 20 runs crashed at startup (BrokenPipe/ConnectionReset in SubprocVecEnv workers) within ~20 min; the 5 that started later ran fine (3380-4180 s). Cause not confirmed (CPU/pid/shm contention suspected). Crashed runs wrote no eval.jsonl -> no outcome-dependent selection. Re-running the 15 with concurrency 5 (scripts/run_gym_stage2_retry.sh); crashed logs kept as *_crashed1.
