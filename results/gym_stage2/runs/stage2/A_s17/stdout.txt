@@ -1,9 +1,9 @@
 Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
 Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
 See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
-[2026-10-30 11:07:26,396][root][INFO] - Number of network parameters: 553020
-[2026-10-30 11:07:26,545][root][INFO] - Actor weights not found. Using pre-trained weights!
-[2026-10-30 11:07:26,546][root][INFO] - Loaded base policy weights from /root/dsrl/data/dppo_log/gym-pretrain/hopper-medium-v2_pre_diffusion_mlp_ta4_td20/2024-06-12_23-10-05/checkpoint/state_3000.pt
+[2026-10-30 13:21:23,429][root][INFO] - Number of network parameters: 553020
+[2026-10-30 13:21:23,590][root][INFO] - Actor weights not found. Using pre-trained weights!
+[2026-10-30 13:21:23,591][root][INFO] - Loaded base policy weights from /root/dsrl/data/dppo_log/gym-pretrain/hopper-medium-v2_pre_diffusion_mlp_ta4_td20/2024-06-12_23-10-05/checkpoint/state_3000.pt
 Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
 Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
 See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
@@ -60,16 +60,10 @@ Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or conta
 See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
 Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
 Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
-See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
-Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
-See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
-Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
 See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
-
 Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
 Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
 See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
-
 Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
 Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
 See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
@@ -124,6 +118,12 @@ See the migration guide at https://gymnasium.farama.org/introduction/migration_g
 Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
 Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
 See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
 env class: <class 'env_utils.ActionChunkWrapper'>
 gymnasium.Env class: <class 'gymnasium.core.Env'>
 MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
@@ -316,276 +316,6 @@ env class: <class 'stable_baselines3.common.monitor.Monitor'>
 gymnasium.Env class: <class 'gymnasium.core.Env'>
 MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
 Is instance: True
-Process ForkServerProcess-22:
-Process ForkServerProcess-25:
-Process ForkServerProcess-24:
-Process ForkServerProcess-17:
-Process ForkServerProcess-12:
-Process ForkServerProcess-26:
-Process ForkServerProcess-18:
-Process ForkServerProcess-13:
-Process ForkServerProcess-19:
-Process ForkServerProcess-14:
-Process ForkServerProcess-29:
-Process ForkServerProcess-20:
-Process ForkServerProcess-21:
-Process ForkServerProcess-27:
-Process ForkServerProcess-15:
-Process ForkServerProcess-28:
-Process ForkServerProcess-23:
-Process ForkServerProcess-16:
-Traceback (most recent call last):
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/root/dsrl/third_party/dsrl/stable-baselines3/stable_baselines3/common/vec_env/subproc_vec_env.py", line 33, in _worker
-    cmd, data = remote.recv()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 250, in recv
-    buf = self._recv_bytes()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
-    buf = self._recv(4)
-Traceback (most recent call last):
-Traceback (most recent call last):
-Traceback (most recent call last):
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
-    chunk = read(handle, remaining)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/root/dsrl/third_party/dsrl/stable-baselines3/stable_baselines3/common/vec_env/subproc_vec_env.py", line 33, in _worker
-    cmd, data = remote.recv()
-ConnectionResetError: [Errno 104] Connection reset by peer
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 250, in recv
-    buf = self._recv_bytes()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
-    buf = self._recv(4)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
-    chunk = read(handle, remaining)
-Traceback (most recent call last):
-Traceback (most recent call last):
-Traceback (most recent call last):
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-ConnectionResetError: [Errno 104] Connection reset by peer
-Traceback (most recent call last):
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-Traceback (most recent call last):
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/root/dsrl/third_party/dsrl/stable-baselines3/stable_baselines3/common/vec_env/subproc_vec_env.py", line 33, in _worker
-    cmd, data = remote.recv()
-  File "/root/dsrl/third_party/dsrl/stable-baselines3/stable_baselines3/common/vec_env/subproc_vec_env.py", line 33, in _worker
-    cmd, data = remote.recv()
-  File "/root/dsrl/third_party/dsrl/stable-baselines3/stable_baselines3/common/vec_env/subproc_vec_env.py", line 33, in _worker
-    cmd, data = remote.recv()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 250, in recv
-    buf = self._recv_bytes()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 250, in recv
-    buf = self._recv_bytes()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 250, in recv
-    buf = self._recv_bytes()
-  File "/root/dsrl/third_party/dsrl/stable-baselines3/stable_baselines3/common/vec_env/subproc_vec_env.py", line 33, in _worker
-    cmd, data = remote.recv()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/root/dsrl/third_party/dsrl/stable-baselines3/stable_baselines3/common/vec_env/subproc_vec_env.py", line 33, in _worker
-    cmd, data = remote.recv()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
-    buf = self._recv(4)
-Traceback (most recent call last):
-Traceback (most recent call last):
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
-    buf = self._recv(4)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
-    buf = self._recv(4)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 250, in recv
-    buf = self._recv_bytes()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 250, in recv
-    buf = self._recv_bytes()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
-    chunk = read(handle, remaining)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
-    chunk = read(handle, remaining)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
-    chunk = read(handle, remaining)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
-    buf = self._recv(4)
-  File "/root/dsrl/third_party/dsrl/stable-baselines3/stable_baselines3/common/vec_env/subproc_vec_env.py", line 33, in _worker
-    cmd, data = remote.recv()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
-    buf = self._recv(4)
-ConnectionResetError: [Errno 104] Connection reset by peer
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-Traceback (most recent call last):
-ConnectionResetError: [Errno 104] Connection reset by peer
-  File "/root/dsrl/third_party/dsrl/stable-baselines3/stable_baselines3/common/vec_env/subproc_vec_env.py", line 33, in _worker
-    cmd, data = remote.recv()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
-    chunk = read(handle, remaining)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
-    chunk = read(handle, remaining)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 250, in recv
-    buf = self._recv_bytes()
-ConnectionResetError: [Errno 104] Connection reset by peer
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 250, in recv
-    buf = self._recv_bytes()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
-    buf = self._recv(4)
-ConnectionResetError: [Errno 104] Connection reset by peer
-  File "/root/dsrl/third_party/dsrl/stable-baselines3/stable_baselines3/common/vec_env/subproc_vec_env.py", line 33, in _worker
-    cmd, data = remote.recv()
-ConnectionResetError: [Errno 104] Connection reset by peer
-  File "/root/dsrl/third_party/dsrl/stable-baselines3/stable_baselines3/common/vec_env/subproc_vec_env.py", line 33, in _worker
-    cmd, data = remote.recv()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
-    buf = self._recv(4)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
-    chunk = read(handle, remaining)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 250, in recv
-    buf = self._recv_bytes()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 250, in recv
-    buf = self._recv_bytes()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
-    chunk = read(handle, remaining)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
-    buf = self._recv(4)
-ConnectionResetError: [Errno 104] Connection reset by peer
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
-    buf = self._recv(4)
-  File "/root/dsrl/third_party/dsrl/stable-baselines3/stable_baselines3/common/vec_env/subproc_vec_env.py", line 33, in _worker
-    cmd, data = remote.recv()
-ConnectionResetError: [Errno 104] Connection reset by peer
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
-    chunk = read(handle, remaining)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
-    chunk = read(handle, remaining)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 250, in recv
-    buf = self._recv_bytes()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
-    buf = self._recv(4)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
-    chunk = read(handle, remaining)
-ConnectionResetError: [Errno 104] Connection reset by peer
-ConnectionResetError: [Errno 104] Connection reset by peer
-ConnectionResetError: [Errno 104] Connection reset by peer
-Traceback (most recent call last):
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/root/dsrl/third_party/dsrl/stable-baselines3/stable_baselines3/common/vec_env/subproc_vec_env.py", line 33, in _worker
-    cmd, data = remote.recv()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 250, in recv
-    buf = self._recv_bytes()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
-    buf = self._recv(4)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
-    chunk = read(handle, remaining)
-ConnectionResetError: [Errno 104] Connection reset by peer
-Traceback (most recent call last):
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/root/dsrl/third_party/dsrl/stable-baselines3/stable_baselines3/common/vec_env/subproc_vec_env.py", line 33, in _worker
-    cmd, data = remote.recv()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 250, in recv
-    buf = self._recv_bytes()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
-    buf = self._recv(4)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
-    chunk = read(handle, remaining)
-ConnectionResetError: [Errno 104] Connection reset by peer
-Traceback (most recent call last):
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/root/dsrl/third_party/dsrl/stable-baselines3/stable_baselines3/common/vec_env/subproc_vec_env.py", line 33, in _worker
-    cmd, data = remote.recv()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 250, in recv
-    buf = self._recv_bytes()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
-    buf = self._recv(4)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
-    chunk = read(handle, remaining)
-ConnectionResetError: [Errno 104] Connection reset by peer
-Traceback (most recent call last):
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/root/dsrl/third_party/dsrl/stable-baselines3/stable_baselines3/common/vec_env/subproc_vec_env.py", line 33, in _worker
-    cmd, data = remote.recv()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 250, in recv
-    buf = self._recv_bytes()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
-    buf = self._recv(4)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
-    chunk = read(handle, remaining)
-ConnectionResetError: [Errno 104] Connection reset by peer
-Traceback (most recent call last):
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/root/dsrl/third_party/dsrl/stable-baselines3/stable_baselines3/common/vec_env/subproc_vec_env.py", line 33, in _worker
-    cmd, data = remote.recv()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 250, in recv
-    buf = self._recv_bytes()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
-    buf = self._recv(4)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
-    chunk = read(handle, remaining)
-ConnectionResetError: [Errno 104] Connection reset by peer
-Traceback (most recent call last):
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/root/dsrl/third_party/dsrl/stable-baselines3/stable_baselines3/common/vec_env/subproc_vec_env.py", line 33, in _worker
-    cmd, data = remote.recv()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 250, in recv
-    buf = self._recv_bytes()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
-    buf = self._recv(4)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
-    chunk = read(handle, remaining)
-ConnectionResetError: [Errno 104] Connection reset by peer
 env class: <class 'env_utils.ActionChunkWrapper'>
 gymnasium.Env class: <class 'gymnasium.core.Env'>
 MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
@@ -594,18 +324,190 @@ env class: <class 'stable_baselines3.common.monitor.Monitor'>
 gymnasium.Env class: <class 'gymnasium.core.Env'>
 MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
 Is instance: True
-Process ForkServerProcess-11:
-Traceback (most recent call last):
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
-    self.run()
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/root/dsrl/third_party/dsrl/stable-baselines3/stable_baselines3/common/vec_env/subproc_vec_env.py", line 60, in _worker
-    remote.send(env.get_wrapper_attr(data))
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 206, in send
-    self._send_bytes(_ForkingPickler.dumps(obj))
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 411, in _send_bytes
-    self._send(header + buf)
-  File "/root/miniforge3/envs/dsrl_upstream/lib/python3.9/multiprocessing/connection.py", line 368, in _send
-    n = write(self._handle, buf)
-BrokenPipeError: [Errno 32] Broken pipe
+eval episode 0 at timestep 0
+eval episode 1 at timestep 0
+eval episode 2 at timestep 0
+eval episode 3 at timestep 0
+eval episode 4 at timestep 0
+eval episode 5 at timestep 0
+eval episode 6 at timestep 0
+eval episode 7 at timestep 0
+Logging to /root/runs/stage2/A_s17/gym-dsrl/gym_hopper_dsrl_2026-10-30_13-21-22_17/2026-10-30_13-21-22_17/SAC_1
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 128      |
+|    ep_rew_mean     | 1.62e+03 |
+| time/              |          |
+|    episodes        | 4        |
+|    fps             | 16       |
+|    time_elapsed    | 31       |
+|    total_timesteps | 532      |
+| train/             |          |
+|    actor_loss      | -56.3    |
+|    critic_loss     | 108      |
+|    ent_coef        | 0.674    |
+|    ent_coef_loss   | -3.22    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 1320     |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 123      |
+|    ep_rew_mean     | 1.54e+03 |
+| time/              |          |
+|    episodes        | 8        |
+|    fps             | 16       |
+|    time_elapsed    | 63       |
+|    total_timesteps | 1076     |
+| train/             |          |
+|    actor_loss      | -102     |
+|    critic_loss     | 71       |
+|    ent_coef        | 0.45     |
+|    ent_coef_loss   | -6.41    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 2680     |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 119      |
+|    ep_rew_mean     | 1.48e+03 |
+| time/              |          |
+|    episodes        | 12       |
+|    fps             | 16       |
+|    time_elapsed    | 92       |
+|    total_timesteps | 1564     |
+| train/             |          |
+|    actor_loss      | -140     |
+|    critic_loss     | 52.2     |
+|    ent_coef        | 0.314    |
+|    ent_coef_loss   | -8.85    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 3900     |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 115      |
+|    ep_rew_mean     | 1.43e+03 |
+| time/              |          |
+|    episodes        | 16       |
+|    fps             | 17       |
+|    time_elapsed    | 115      |
+|    total_timesteps | 1968     |
+| train/             |          |
+|    actor_loss      | -171     |
+|    critic_loss     | 40.3     |
+|    ent_coef        | 0.234    |
+|    ent_coef_loss   | -10.7    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 4900     |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 115      |
+|    ep_rew_mean     | 1.43e+03 |
+| time/              |          |
+|    episodes        | 20       |
+|    fps             | 17       |
+|    time_elapsed    | 146      |
+|    total_timesteps | 2496     |
+| train/             |          |
+|    actor_loss      | -211     |
+|    critic_loss     | 30.2     |
+|    ent_coef        | 0.16     |
+|    ent_coef_loss   | -13.1    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 6220     |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 115      |
+|    ep_rew_mean     | 1.42e+03 |
+| time/              |          |
+|    episodes        | 24       |
+|    fps             | 16       |
+|    time_elapsed    | 170      |
+|    total_timesteps | 2900     |
+| train/             |          |
+|    actor_loss      | -242     |
+|    critic_loss     | 27.4     |
+|    ent_coef        | 0.119    |
+|    ent_coef_loss   | -14.3    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 7240     |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 116      |
+|    ep_rew_mean     | 1.44e+03 |
+| time/              |          |
+|    episodes        | 28       |
+|    fps             | 17       |
+|    time_elapsed    | 195      |
+|    total_timesteps | 3408     |
+| train/             |          |
+|    actor_loss      | -279     |
+|    critic_loss     | 23.9     |
+|    ent_coef        | 0.0838   |
+|    ent_coef_loss   | -13.5    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 8500     |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 115      |
+|    ep_rew_mean     | 1.42e+03 |
+| time/              |          |
+|    episodes        | 32       |
+|    fps             | 17       |
+|    time_elapsed    | 219      |
+|    total_timesteps | 3816     |
+| train/             |          |
+|    actor_loss      | -309     |
+|    critic_loss     | 18.7     |
+|    ent_coef        | 0.0639   |
+|    ent_coef_loss   | -13.7    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 9520     |
+---------------------------------
+eval episode 0 at timestep 24004
+eval episode 1 at timestep 24004
+eval episode 2 at timestep 24004
+eval episode 3 at timestep 24004
+eval episode 4 at timestep 24004
+eval episode 5 at timestep 24004
+eval episode 6 at timestep 24004
+eval episode 7 at timestep 24004
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 115      |
+|    ep_rew_mean     | 1.43e+03 |
+| time/              |          |
+|    episodes        | 36       |
+|    fps             | 15       |
+|    time_elapsed    | 278      |
+|    total_timesteps | 4388     |
+| train/             |          |
+|    actor_loss      | -352     |
+|    critic_loss     | 26.9     |
+|    ent_coef        | 0.0436   |
+|    ent_coef_loss   | -6.98    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 10960    |
+---------------------------------
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 114      |
+|    ep_rew_mean     | 1.42e+03 |
+| time/              |          |
+|    episodes        | 40       |
+|    fps             | 15       |
+|    time_elapsed    | 301      |
+|    total_timesteps | 4816     |
+| train/             |          |
+|    actor_loss      | -384     |
+|    critic_loss     | 18.2     |
+|    ent_coef        | 0.0341   |
+|    ent_coef_loss   | -8.55    |
+|    learning_rate   | 0.0003   |
+|    n_updates       | 12020    |
+---------------------------------
