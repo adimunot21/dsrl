@@ -60,3 +60,10 @@
 
 ## 2026-10-30 Stage 2 launch incident (A40-class replacement: RTX 4000 Ada pod, 18 vCPU, 71 GB, ~$0.5/h)
 - 10 concurrent runs x 29 env workers on 18 vCPUs: 15 of 20 runs crashed at startup (BrokenPipe/ConnectionReset in SubprocVecEnv workers) within ~20 min; the 5 that started later ran fine (3380-4180 s). Cause not confirmed (CPU/pid/shm contention suspected). Crashed runs wrote no eval.jsonl -> no outcome-dependent selection. Re-running the 15 with concurrency 5 (scripts/run_gym_stage2_retry.sh); crashed logs kept as *_crashed1.
+
+## 2026-10-30 Gym stage 2 result (dense-eval replicate, Hopper, seeds 10-19, prereg 002b; pod stopped by verified auto-stop at ~15:32 UTC)
+- All 20 runs completed (13 evals each); 15 of them via the concurrency-5 retry after the startup crashes. Pod: RTX 4000 Ada, 18 vCPU, ~$0.5/h, ~4.7 h total incl. setup -> ~$2.4. Cumulative cloud spend this session ~$5 of the ~$10 (user also authorised up to $7-8 more).
+- Primary metric (mean of last 3 evals): A 1808 [1758, 1868]; C 1804 [1753, 1856]; C - A = -4.6 [-72, +56]; C > A in 7/10 seeds. Verdict per 002b: NO DETECTABLE DIFFERENCE. The stage-1 deficit of C (-144 [-248,-38]) did not replicate on independent seeds with denser eval.
+- Secondary (mean over all evals after step 0): C - A = -25.7 [-68, +13]; not significant.
+- Pooled 20 seeds (mixed metrics: stage-1 single final eval + stage-2 last-3): -74.6 [-148, -8]; reported but not a primary result (metric mismatch; stage-1 effect likely partly noise/winner's-curse).
+- Interpretation: truncation fix has no demonstrated effect on Hopper at 200k raw steps. A also gains over base policy (~1610) in both stages: +200 here.
