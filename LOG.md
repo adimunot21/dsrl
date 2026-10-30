@@ -50,3 +50,10 @@
 - Full arm grid ~270 runs => ~700 laptop-hours: laptop route infeasible beyond a few runs. Need a cloud rate gate before fixing T (prereg 002: T in configs/ before first reported run).
 - patches/0001_truncation_and_raw_step_budget.patch (applies cleanly to dsrl 8d21b9c): (1) ActionChunkWrapper reports terminated/truncated separately using the inner env's TimeLimit.truncated info and the chunk wrapper's own limit, so time-outs are bootstrapped; (2) total_timesteps = cfg.total_raw_env_steps // act_steps (default 80M raw == released 20M chunk-steps). Not yet run; arm C = A + this patch.
 - Launch recipe (no submodule edits): cd third_party/dsrl; LD_LIBRARY_PATH=$HOME/.mujoco/mujoco210/bin:/usr/lib/nvidia MUJOCO_GL=egl python train_dsrl.py --config-path $PWD/cfg/gym --config-name dsrl_hopper.yaml algorithm=dsrl_sac use_wandb=False seed=S log_dir=... base_policy_path=<abs> normalization_path=<abs>
+
+## 2026-10-30 Gym stage 1 result (Hopper, 200k raw steps, seeds 0-9; pod RTX 3090 @ $0.507/h, auto-stopped after verification)
+- All 20 runs finished (~68 min each, 10 concurrent, 2 waves), 0 failures, pod stopped by watchdog path (SSH now "container not found").
+- Metric (prereg 002 / gym_budget.json): mean eval reward over last 10% of eval checkpoints. Eval interval was 16,000 chunk-steps, so each run has only 4 evals (0, 16k, 32k, 48k) -> the "last 10%" is the single final eval. This is noisy; flagged as a limitation.
+- Arm A (released DSRL-SAC): 1908 [1826, 2002] (bootstrap CI over seeds); base policy initial eval ~1616-1631. Gain over initial +292 [211, 379].
+- Arm C (truncation fix): 1763 [1702, 1833]; gain +133 [59, 212].
+- C - A paired by seed: -144 [-248, -38]; C > A in 2/10 seeds. The truncation fix did NOT help here; it lowered the final return. Not the direction H5 anticipated; reported as is, no redefinition. Mechanism not established (possible: bootstrapping through time-limit changes value targets/exploration; or eval noise with 4 evals). Total ~ $2.3-2.8 spent of ~$10.
