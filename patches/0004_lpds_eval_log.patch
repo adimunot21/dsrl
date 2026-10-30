@@ -1,0 +1,14 @@
+--- a/utils.py	2026-10-30 15:33:41.121205104 +0000
++++ b/utils.py	2026-10-30 15:33:41.182264260 +0000
+@@ -239,6 +239,11 @@
+ 					avg_rew = rew_total / total_ep
+ 				else:
+ 					avg_rew = 0
++				# PATCH eval-log (logging only): the released code writes eval results to wandb only
++				_eval_log = __import__('os').environ.get('DSRL_EVAL_LOG')
++				if _eval_log:
++					with open(_eval_log, 'a') as _f:
++						_f.write(__import__('json').dumps({'timesteps': int(self.num_timesteps), 'deterministic': bool(deterministic), 'reward': float(avg_rew), 'success_rate': float(success_rate), 'unix_time': __import__('time').time()}) + '\n')
+ 				if self.use_wandb:
+ 					name = 'eval'
+ 					if deterministic:
