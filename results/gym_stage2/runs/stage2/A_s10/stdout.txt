@@ -1,0 +1,42 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[2026-10-30 11:01:34,803][root][INFO] - Number of network parameters: 553020
+[2026-10-30 11:01:34,989][root][INFO] - Actor weights not found. Using pre-trained weights!
+[2026-10-30 11:01:34,989][root][INFO] - Loaded base policy weights from /root/dsrl/data/dppo_log/gym-pretrain/hopper-medium-v2_pre_diffusion_mlp_ta4_td20/2024-06-12_23-10-05/checkpoint/state_3000.pt
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+env class: <class 'env_utils.ActionChunkWrapper'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'stable_baselines3.common.monitor.Monitor'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'env_utils.ActionChunkWrapper'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'stable_baselines3.common.monitor.Monitor'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'env_utils.ActionChunkWrapper'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'env_utils.ActionChunkWrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
+env class: <class 'stable_baselines3.common.monitor.Monitor'>
+gymnasium.Env class: <class 'gymnasium.core.Env'>
+MRO: (<class 'stable_baselines3.common.monitor.Monitor'>, <class 'gymnasium.core.Wrapper'>, <class 'gymnasium.core.Env'>, <class 'typing.Generic'>, <class 'object'>)
+Is instance: True
