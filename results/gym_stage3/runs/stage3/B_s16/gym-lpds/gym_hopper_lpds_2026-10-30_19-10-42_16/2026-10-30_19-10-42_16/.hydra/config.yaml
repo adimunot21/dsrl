@@ -1,0 +1,88 @@
+name: gym_hopper_lpds_${now:%Y-%m-%d}_${now:%H-%M-%S}_${seed}
+logdir: ${log_dir}/gym-lpds/${name}/${now:%Y-%m-%d}_${now:%H-%M-%S}_${seed}
+artifacts_dir: ./artifacts
+base_policy_path: ${artifacts_dir}/backbones/gym/hopper-medium-v2/state_3000.pt
+normalization_path: ${artifacts_dir}/normalization/gym/${env_name}/normalization.npz
+algorithm: lpds
+impl: lpds
+seed: 16
+device: cuda:0
+use_wandb: false
+env_name: hopper-medium-v2
+log_dir: /root/runs/stage3/B_s16
+obs_dim: 11
+action_dim: 3
+cond_steps: 1
+act_steps: 4
+load_offline_data: false
+deterministic_eval: false
+eval_interval: 1000
+num_evals: 200
+save_model_interval: 10000
+save_replay_buffer: false
+total_timesteps: 50000
+env:
+  n_envs: 4
+  n_eval_envs: 25
+  vec_env_cls: subproc
+  name: ${env_name}
+  max_episode_steps: 1000
+  reset_at_iteration: false
+  save_video: false
+  best_reward_threshold_for_success: 0
+  reward_offset: 0
+  wrappers:
+    mujoco_lowdim:
+      normalization_path: ${normalization_path}
+    multi_step:
+      n_obs_steps: ${cond_steps}
+      n_action_steps: ${act_steps}
+      max_episode_steps: ${env.max_episode_steps}
+      reset_within_step: true
+wandb:
+  project: lpds
+  run: ${now:%H-%M-%S}_${name}
+  group: gym-hopper
+train:
+  tau: 0.005
+  actor_lr: 0.0003
+  batch_size: 256
+  train_freq: 2
+  utd: 20
+  noise_critic_grad_steps: 10
+  use_layer_norm: true
+  layer_size: 128
+  num_layers: 3
+  discount: 0.99
+  init_rollout_steps: 2001
+  action_magnitude: 1.5
+  n_critics: 2
+  critic_backup_combine_type: min
+  target_l2_deviation: 0.02
+  det_actor_lr: 0.0003
+model:
+  _target_: lpds_models.diffusion.diffusion_eval.DiffusionEval
+  use_ddim: true
+  ddim_steps: 5
+  ft_denoising_steps: 0
+  predict_epsilon: true
+  denoised_clip_value: 1.0
+  network_path: ${base_policy_path}
+  network:
+    _target_: lpds_models.diffusion.mlp_diffusion.DiffusionMLP
+    time_dim: 16
+    mlp_dims:
+    - 512
+    - 512
+    - 512
+    activation_type: ReLU
+    residual_style: true
+    cond_dim: ${eval:'${obs_dim} * ${cond_steps}'}
+    horizon_steps: ${act_steps}
+    action_dim: ${action_dim}
+  horizon_steps: ${act_steps}
+  obs_dim: ${obs_dim}
+  action_dim: ${action_dim}
+  denoising_steps: 20
+  device: ${device}
+  controllable_noise: true
