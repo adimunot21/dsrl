@@ -1,3 +1,8 @@
 {"timesteps": 0, "deterministic": false, "reward": 1492.714220411187, "success_rate": 1.0, "unix_time": 1793369751.6457062}
 {"timesteps": 4000, "deterministic": false, "reward": 1630.4967616463753, "success_rate": 1.0, "unix_time": 1793370040.727911}
 {"timesteps": 8000, "deterministic": false, "reward": 1015.3437297338697, "success_rate": 1.0, "unix_time": 1793370297.2079122}
+{"timesteps": 12000, "deterministic": false, "reward": 1622.8411006155413, "success_rate": 1.0, "unix_time": 1793370553.8191874}
+{"timesteps": 16000, "deterministic": false, "reward": 1623.5688315241682, "success_rate": 1.0, "unix_time": 1793370816.0017319}
+{"timesteps": 20000, "deterministic": false, "reward": 1624.687553955383, "success_rate": 1.0, "unix_time": 1793371078.8267727}
+{"timesteps": 24000, "deterministic": false, "reward": 2014.6605201126827, "success_rate": 1.0, "unix_time": 1793371341.0886045}
+{"timesteps": 28000, "deterministic": false, "reward": 1729.1681444059966, "success_rate": 1.0, "unix_time": 1793371600.5422728}
