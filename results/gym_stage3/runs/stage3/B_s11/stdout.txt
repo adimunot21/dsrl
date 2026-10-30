@@ -191,3 +191,25 @@ eval episode 3 at timestep 152004
 eval episode 4 at timestep 152004
 eval episode 5 at timestep 152004
 eval episode 6 at timestep 152004
+eval episode 7 at timestep 152004
+success rate: 1.0000 at step: 36000
+triggering evaluate in logging callback @ call: 10000
+eval episode 0 at timestep 168004
+eval episode 1 at timestep 168004
+eval episode 2 at timestep 168004
+eval episode 3 at timestep 168004
+eval episode 4 at timestep 168004
+eval episode 5 at timestep 168004
+eval episode 6 at timestep 168004
+eval episode 7 at timestep 168004
+success rate: 1.0000 at step: 40000
+triggering evaluate in logging callback @ call: 11000
+eval episode 0 at timestep 184004
+eval episode 1 at timestep 184004
+eval episode 2 at timestep 184004
+eval episode 3 at timestep 184004
+eval episode 4 at timestep 184004
+eval episode 5 at timestep 184004
+eval episode 6 at timestep 184004
+eval episode 7 at timestep 184004
+success rate: 1.0000 at step: 44000
